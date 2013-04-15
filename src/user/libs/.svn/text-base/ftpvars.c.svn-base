@@ -1,0 +1,37 @@
+#include <ftpvars.h>
+
+// the cmd list is for ftp client ftp server communication
+// it respects the RFC doc for FTP
+
+struct ftp_cmd FTP_CMD_LIST[FTP_CMD_COUNT] = {
+    {"USER", USER},
+    {"PASS", PASS},
+    {"RETR", RETR},
+    {"STOR", STOR},
+    {"STOU", STOU},
+    {"APPE", APPE},
+    {"REST", REST},
+    {"RNFR", RNFR},
+    {"RNTO", RNTO},
+    {"ABOR", ABOR},
+    {"DELE", DELE},
+    {"RMD" , RMD },
+    {"MKD" , MKD },
+    {"PWD" , PWD },
+    {"CWD" , CWD },
+    {"CDUP", CDUP},
+    {"LIST", LIST},
+    {"NLST", NLST},
+    {"SITE", SITE},
+    {"STAT", STAT},
+    {"HELP", HELP},
+    {"NOOP", NOOP},
+    {"TYPE", TYPE},
+    {"PASV", PASV},
+    {"PORT", PORT},
+    {"SYST", SYST},
+    {"QUIT", QUIT},
+    {"MDTM", MDTM},
+    {"SIZE", SIZE}
+};
+

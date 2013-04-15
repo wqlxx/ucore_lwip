@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4
+END
+inet.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/inet.c
+END
+autoip.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/autoip.c
+END
+ip_addr.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/ip_addr.c
+END
+ip_frag.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/ip_frag.c
+END
+icmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/icmp.c
+END
+ip.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/ip.c
+END
+inet_chksum.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/inet_chksum.c
+END
+igmp.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/src/kern/lwip/core/ipv4/igmp.c
+END

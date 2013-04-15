@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/49/trunk/src/kern/socket
+END
+sockwrap.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/40/trunk/src/kern/socket/sockwrap.h
+END
+sockwrap.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/49/trunk/src/kern/socket/sockwrap.c
+END

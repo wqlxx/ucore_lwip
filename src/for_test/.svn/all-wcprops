@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/47/trunk/src/for_test
+END
+udp_server.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/46/trunk/src/for_test/udp_server.py
+END
+udp_client.py
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/47/trunk/src/for_test/udp_client.py
+END

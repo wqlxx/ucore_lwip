@@ -1,0 +1,15 @@
+digraph {
+    user[label="Application layer"];
+    syscall[label="syscall invoke"];
+    sockwrap[label="socket wrap layer"];
+    lwip[label="LWIP TCP/IP protocol stack"];
+    tcpipthread[label="TCP/IP kernel thread"];
+    driver[label="NIC Driver"];
+    user->syscall;
+    syscall->sockwrap;
+    sockwrap->lwip;
+    lwip->driver;
+    driver->lwip;
+    {rank=same;lwip;tcpipthread}
+    lwip->tcpipthread[label="mbox post",rank="same"];
+}

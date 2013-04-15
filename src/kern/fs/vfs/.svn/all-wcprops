@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs
+END
+vfsfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/vfsfile.c
+END
+inode.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/inode.c
+END
+vfs.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/vfs.c
+END
+inode.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/inode.h
+END
+vfs.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/vfs.h
+END
+vfslookup.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/vfslookup.c
+END
+vfspath.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/vfspath.c
+END
+vfsdev.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/fs/vfs/vfsdev.c
+END

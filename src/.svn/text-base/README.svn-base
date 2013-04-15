@@ -1,0 +1,8 @@
+
+for debug:
+    add E_USER_ACCESS_KERNEL error code in libs/error.h and libs/printfmt.c
+    comment out assert in kern/mm/swap.c:976
+
+in kern/lwip/arch/sys_arch.c
+    sys_arch_timeouts
+        add lwip_timeous->next initialization code

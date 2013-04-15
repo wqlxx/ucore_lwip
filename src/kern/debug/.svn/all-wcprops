@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/1/trunk/src/kern/debug
+END
+stab.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/debug/stab.h
+END
+kdebug.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/debug/kdebug.c
+END
+assert.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/debug/assert.h
+END
+kdebug.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/debug/kdebug.h
+END
+monitor.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/debug/monitor.c
+END
+panic.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/kern/debug/panic.c
+END
+monitor.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/debug/monitor.h
+END

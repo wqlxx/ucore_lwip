@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/!svn/ver/41/trunk/src/kern/mm
+END
+pmm.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1/trunk/src/kern/mm/pmm.h
+END
+shmem.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/kern/mm/shmem.h
+END
+swap.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/1/trunk/src/kern/mm/swap.h
+END
+vmm.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/20/trunk/src/kern/mm/vmm.c
+END
+buddy_pmm.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/mm/buddy_pmm.c
+END
+slab.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/41/trunk/src/kern/mm/slab.c
+END
+memlayout.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/mm/memlayout.h
+END
+mmu.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1/trunk/src/kern/mm/mmu.h
+END
+vmm.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1/trunk/src/kern/mm/vmm.h
+END
+buddy_pmm.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/mm/buddy_pmm.h
+END
+slab.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/1/trunk/src/kern/mm/slab.h
+END
+pmm.c
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/1/trunk/src/kern/mm/pmm.c
+END
+shmem.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/kern/mm/shmem.c
+END
+swap.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/20/trunk/src/kern/mm/swap.c
+END

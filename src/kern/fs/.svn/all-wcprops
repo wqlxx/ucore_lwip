@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/1/trunk/src/kern/fs
+END
+sysfile.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/fs/sysfile.c
+END
+file.c
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/1/trunk/src/kern/fs/file.c
+END
+sysfile.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/fs/sysfile.h
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/1/trunk/src/kern/fs/file.h
+END
+iobuf.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/kern/fs/iobuf.c
+END
+fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/1/trunk/src/kern/fs/fs.c
+END
+iobuf.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/kern/fs/iobuf.h
+END
+fs.h
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/1/trunk/src/kern/fs/fs.h
+END

@@ -1,0 +1,46 @@
+#ifndef XV6_PCI_H_
+#define XV6_PCI_H_
+
+#include <types.h>
+
+typedef int pci_dev_t;
+// PCI subsystem interface
+enum {
+    pci_res_bus, 
+    pci_res_mem, 
+    pci_res_io, 
+    pci_res_max };
+
+struct pci_bus;
+
+struct pci_func {
+    struct pci_bus *bus;	// Primary bus for bridges
+
+    uint32_t dev;
+    uint32_t func;
+
+    uint32_t dev_id;
+    uint32_t dev_class;
+
+    uint32_t reg_base[6];
+    uint32_t reg_size[6];
+    uint32_t reg_type[6];
+    uint8_t irq_line;
+};
+
+struct pci_bus {
+    struct pci_func *parent_bridge;
+    uint32_t busno;
+};
+
+int pci_init(void);
+void pci_func_enable(struct pci_func *f);
+
+int pci_write_config_byte(int bus, int dev, int fn, int reg, uint8_t val);
+int pci_read_config_byte(int bus, int dev, int fn, int reg, uint8_t *val);
+int pci_write_config_word(int bus, int dev, int fn, int reg, uint16_t val);
+int pci_read_config_word(int bus, int dev, int fn, int reg, uint16_t *val);
+int pci_write_config_dword(int bus, int dev, int fn, int reg, uint32_t val);
+int pci_read_config_dword(int bus, int dev, int fn, int reg, uint32_t *val);
+
+#endif 

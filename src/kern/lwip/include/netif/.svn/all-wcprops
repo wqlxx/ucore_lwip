@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/src/kern/lwip/include/netif
+END
+ppp_oe.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/src/kern/lwip/include/netif/ppp_oe.h
+END
+etharp.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/src/kern/lwip/include/netif/etharp.h
+END
+e100if.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/src/kern/lwip/include/netif/e100if.h
+END
+slipif.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/src/kern/lwip/include/netif/slipif.h
+END
+loopif.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/src/kern/lwip/include/netif/loopif.h
+END

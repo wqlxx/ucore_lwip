@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/31/trunk/src/kern/sync
+END
+ipc.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/kern/sync/ipc.h
+END
+sync.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/kern/sync/sync.h
+END
+event.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/sync/event.c
+END
+sem.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/27/trunk/src/kern/sync/sem.c
+END
+wait.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/kern/sync/wait.c
+END
+mbox.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/31/trunk/src/kern/sync/mbox.c
+END
+event.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/sync/event.h
+END
+wait.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/kern/sync/wait.h
+END
+sem.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/kern/sync/sem.h
+END
+mbox.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/kern/sync/mbox.h
+END
+sync.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/kern/sync/sync.c
+END

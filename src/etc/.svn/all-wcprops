@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/46/trunk/src/etc
+END
+qemu-ifup
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/46/trunk/src/etc/qemu-ifup
+END
+qemu-ifdown
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/5/trunk/src/etc/qemu-ifdown
+END

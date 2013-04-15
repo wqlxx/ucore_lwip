@@ -1,0 +1,2 @@
+qemu -hda bin/ucore.img -drive file=bin/swap.img,media=disk,cache=writeback -drive file=bin/fs.img,media=disk,cache=writeback -serial mon:stdio -net nic,model=i82559er -net tap,script=etc/qemu-ifup,downscript=etc/qemu-ifdown -s -S
+#qemu -hda bin/ucore.img -drive file=bin/swap.img,media=disk,cache=writeback -drive file=bin/fs.img,media=disk,cache=writeback -serial mon:stdio -net nic,model=e1000 -net tap,script=etc/qemu-ifup,downscript=etc/qemu-ifdown

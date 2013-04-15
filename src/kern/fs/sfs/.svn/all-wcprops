@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs
+END
+sfs.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/sfs.h
+END
+bitmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/bitmap.h
+END
+sfs_io.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/sfs_io.c
+END
+sfs_lock.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/sfs_lock.c
+END
+sfs_fs.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/sfs_fs.c
+END
+sfs_inode.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/sfs_inode.c
+END
+sfs.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/sfs.c
+END
+bitmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/fs/sfs/bitmap.c
+END

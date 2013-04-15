@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/50/trunk/src/kern/driver
+END
+clock.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/driver/clock.h
+END
+ide.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/driver/ide.c
+END
+console.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1/trunk/src/kern/driver/console.c
+END
+kbdreg.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/kern/driver/kbdreg.h
+END
+e100.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/29/trunk/src/kern/driver/e100.c
+END
+ide.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/kern/driver/ide.h
+END
+console.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/1/trunk/src/kern/driver/console.h
+END
+e100.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/src/kern/driver/e100.h
+END
+pci.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/49/trunk/src/kern/driver/pci.c
+END
+intr.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/kern/driver/intr.c
+END
+pcireg.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/33/trunk/src/kern/driver/pcireg.h
+END
+pci.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/33/trunk/src/kern/driver/pci.h
+END
+intr.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/kern/driver/intr.h
+END
+e1000.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/50/trunk/src/kern/driver/e1000.c
+END
+picirq.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/src/kern/driver/picirq.c
+END
+e1000.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/35/trunk/src/kern/driver/e1000.h
+END
+clock.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/1/trunk/src/kern/driver/clock.c
+END
+picirq.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/2/trunk/src/kern/driver/picirq.h
+END

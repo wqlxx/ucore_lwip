@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 35
+bin
+obj
+tags
+list.txt
+buildcmd.txt
+
+END

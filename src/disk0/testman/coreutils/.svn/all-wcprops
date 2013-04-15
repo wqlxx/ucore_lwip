@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1/trunk/src/disk0/testman/coreutils
+END
+mv
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1/trunk/src/disk0/testman/coreutils/mv
+END
+cp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1/trunk/src/disk0/testman/coreutils/cp
+END
+cat
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/1/trunk/src/disk0/testman/coreutils/cat
+END
+ls
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1/trunk/src/disk0/testman/coreutils/ls
+END
+rm
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/1/trunk/src/disk0/testman/coreutils/rm
+END

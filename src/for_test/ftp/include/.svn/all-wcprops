@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/46/trunk/src/for_test/ftp/include
+END
+zlog.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/46/trunk/src/for_test/ftp/include/zlog.h
+END
+vars.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/46/trunk/src/for_test/ftp/include/vars.h
+END
+utils.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/46/trunk/src/for_test/ftp/include/utils.h
+END

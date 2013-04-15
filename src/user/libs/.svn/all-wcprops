@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/!svn/ver/49/trunk/src/user/libs
+END
+ftplog.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/12/trunk/src/user/libs/ftplog.h
+END
+ulib.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/user/libs/ulib.h
+END
+string.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/user/libs/string.c
+END
+malloc.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/user/libs/malloc.c
+END
+thread.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/user/libs/thread.c
+END
+umain.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/user/libs/umain.c
+END
+syscall.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/46/trunk/src/user/libs/syscall.c
+END
+ftputils.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/49/trunk/src/user/libs/ftputils.c
+END
+sockets.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/49/trunk/src/user/libs/sockets.c
+END
+malloc.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/user/libs/malloc.h
+END
+thread.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/user/libs/thread.h
+END
+initcode.S
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/1/trunk/src/user/libs/initcode.S
+END
+dir.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/user/libs/dir.c
+END
+file.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/19/trunk/src/user/libs/file.c
+END
+ftputils.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/!svn/ver/16/trunk/src/user/libs/ftputils.h
+END
+syscall.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/40/trunk/src/user/libs/syscall.h
+END
+spipe.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/user/libs/spipe.c
+END
+clone.S
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/user/libs/clone.S
+END
+sockets.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/40/trunk/src/user/libs/sockets.h
+END
+stdio.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/user/libs/stdio.c
+END
+dir.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/1/trunk/src/user/libs/dir.h
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/14/trunk/src/user/libs/file.h
+END
+ftpvars.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/49/trunk/src/user/libs/ftpvars.c
+END
+spipe.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/user/libs/spipe.h
+END
+ftpvars.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/!svn/ver/12/trunk/src/user/libs/ftpvars.h
+END
+panic.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/1/trunk/src/user/libs/panic.c
+END
+ulib.c
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/user/libs/ulib.c
+END
+ftplog.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/49/trunk/src/user/libs/ftplog.c
+END
+lock.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/1/trunk/src/user/libs/lock.h
+END

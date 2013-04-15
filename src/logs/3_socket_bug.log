@@ -1,0 +1,2643 @@
+create bin/fs.img (disk0) successfully.
+qemu -hda bin/ucore.img -drive file=bin/swap.img,media=disk,cache=writeback -drive file=bin/fs.img,media=disk,cache=writeback -serial mon:stdio -net nic,model=i82559er -net tap,script=/etc/qemu-ifup,downscript=/etc/qemu-ifdown -s 
+Executing /etc/qemu-ifup
+Bringing up tap0 for bridge mode ...
+0
+Adding tap0 to br0 ...
+0
+(THU.CST) os is loading ...
+
+Special kernel symbols:
+  entry  0xc010002c (phys)
+  etext  0xc01395c0 (phys)
+  edata  0xc01bef40 (phys)
+  end    0xc01fc82c (phys)
+Kernel executable memory footprint: 1010KB
+memory management: buddy_pmm_manager
+e820map:
+  memory: 0009f400, [00000000, 0009f3ff], type = 1.
+  memory: 00000c00, [0009f400, 0009ffff], type = 2.
+  memory: 00010000, [000f0000, 000fffff], type = 2.
+  memory: 07efd000, [00100000, 07ffcfff], type = 1.
+  memory: 00003000, [07ffd000, 07ffffff], type = 2.
+  memory: 00040000, [fffc0000, ffffffff], type = 2.
+check_alloc_page() succeeded!
+check_pgdir() succeeded!
+check_boot_pgdir() succeeded!
+-------------------- BEGIN --------------------
+PDE(0e0) c0000000-f8000000 38000000 urw
+  |-- PTE(38000) c0000000-f8000000 38000000 -rw
+PDE(001) fac00000-fb000000 00400000 -rw
+  |-- PTE(000e0) faf00000-fafe0000 000e0000 urw
+  |-- PTE(00001) fafeb000-fafec000 00001000 -rw
+--------------------- END ---------------------
+check_slab() succeeded!
+c7b1e0c4 file: kern/mm/vmm.c, line: 95 
+check_vma_struct() succeeded!
+c7b1e0c4 file: kern/mm/vmm.c, line: 95 
+ [ UP ] c7b1e0c4 0 -944594944 
+check_pgfault() succeeded!
+check_vmm() succeeded.
+sched class: RR_scheduler
+ [ DOWN ] c7b1f1e0 1 0 idle
+ [ UP ] c7b1f1e0 0 0 idle
+c01c2d6c file: kern/sync/mbox.c, line: 67 
+ide 0:      10000(sectors), 'QEMU HARDDISK'.
+ide 1:     262144(sectors), 'QEMU HARDDISK'.
+ide 2:     262144(sectors), 'QEMU HARDDISK'.
+c01be644 file: kern/driver/ide.c, line: 156 
+c01be65c file: kern/driver/ide.c, line: 159 
+c01c2bc0 file: kern/mm/swap.c, line: 182 
+c7b240c4 file: kern/mm/vmm.c, line: 95 
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ DOWN ] c01c2bc0 1 0 idle
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ UP ] c01c2bc0 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ DOWN ] c01c2bc0 1 0 idle
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ UP ] c01c2bc0 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ DOWN ] c01c2bc0 1 0 idle
+ [ DOWN ] c01be644 1 0 idle
+ [ UP ] c01be644 0 0 idle
+ [ UP ] c01c2bc0 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+check_swap() succeeded.
+c7b240c4 file: kern/mm/vmm.c, line: 95 
+c7b240c4 file: kern/mm/vmm.c, line: 95 
+check_mm_swap: step1, mm_map ok.
+c7b240c4 file: kern/mm/vmm.c, line: 95 
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+check_mm_swap: step2, mm_unmap ok.
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+check_mm_swap: step3, exit_mmap ok.
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+c7b24144 file: kern/mm/vmm.c, line: 95 
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+check_mm_swap: step4, dup_mmap ok.
+check_mm_swap() succeeded.
+c7b240c4 file: kern/mm/vmm.c, line: 95 
+c7b26124 file: kern/mm/shmem.c, line: 20 
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+check_mm_shm_swap: step1, share memory ok.
+c7b24144 file: kern/mm/vmm.c, line: 95 
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b24144 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+ [ DOWN ] c7b26124 1 0 idle
+ [ UP ] c7b26124 0 0 idle
+ [ UP ] c7b240c4 0 0 idle
+check_mm_shm_swap: step2, dup_mmap ok.
+check_mm_shm_swap() succeeded.
+c01c2d80 file: kern/fs/vfs/vfs.c, line: 27 
+c01c2da0 file: kern/fs/vfs/vfsdev.c, line: 42 
+ [ DOWN ] c01c2da0 1 0 idle
+ [ UP ] c01c2da0 0 0 idle
+ [ DOWN ] c01c2da0 1 0 idle
+ [ UP ] c01c2da0 0 0 idle
+ [ DOWN ] c01c2da0 1 0 idle
+ [ UP ] c01c2da0 0 0 idle
+ [ DOWN ] c01c2da0 1 0 idle
+ [ UP ] c01c2da0 0 0 idle
+c7b1e264 file: kern/fs/pipe/pipe.c, line: 50 
+ [ DOWN ] c01c2da0 1 0 idle
+ [ UP ] c01c2da0 0 0 idle
+ [ DOWN ] c01c2da0 1 0 idle
+ [ DOWN ] c01c2db8 1 0 idle
+ [ DOWN ] c01be65c 1 0 idle
+ [ UP ] c01be65c 0 0 idle
+ [ UP ] c01c2db8 0 0 idle
+ [ DOWN ] c01c2db8 1 0 idle
+ [ DOWN ] c01be65c 1 0 idle
+ [ UP ] c01be65c 0 0 idle
+ [ UP ] c01c2db8 0 0 idle
+c7b1e39c file: kern/fs/sfs/sfs_fs.c, line: 187 
+c7b1e3b0 file: kern/fs/sfs/sfs_fs.c, line: 189 
+c7b1e3c4 file: kern/fs/sfs/sfs_fs.c, line: 191 
+sfs: mount: 'simple file system' (2022/30746/32768)
+vfs: mount disk0.
+ [ UP ] c01c2da0 0 0 idle
+c7b1f460 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f480 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f4a0 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f4c0 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f4e0 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f500 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f520 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f540 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f560 file: kern/lwip/arch/sys_arch.c, line: 55 
+ [ DOWN ] c7b1f1e0 1 0 idle
+ [ UP ] c7b1f1e0 0 0 idle
+++ setup timer interrupts
+PCI: 00:00.0: 8086:1237: class 6.0 irq 0
+PCI: 00:00.0: Bridge 8086:1237
+PCI: 00:01.0: 8086:7000: class 6.1 irq 0
+PCI: 00:01.0: Bridge 8086:7000
+PCI: 00:01.1: 8086:7010: class 1.1 irq 0
+PCI: 00:01.3: 8086:7113: class 6.80 irq 9
+PCI: 00:01.3: Bridge 8086:7113
+PCI: 00:02.0: 1013:00b8: class 3.0 irq 0
+PCI: 00:02.0: Display 1013:00b8
+PCI: 00:03.0: 8086:1209: class 2.0 irq 11
+PCI: 00:03.0: Network (ethernet) 8086:1209
+PCI: 00:03.0: Intel 82559ER Fast Ethernet PCI Controller 8086:1209
+  mem region 0: 4096 bytes at 0xf2020000
+  -> reg_base[0] = f2020000
+  -> reg_size[0] = 00001000
+  io region 1: 64 bytes at 0xc040
+  -> reg_base[1] = 0000c040
+  -> reg_size[1] = 00000040
+  mem region 2: 131072 bytes at 0xf2040000
+  -> reg_base[2] = f2040000
+  -> reg_size[2] = 00020000
+c01bf648 file: kern/driver/e100.c, line: 107 
+c01bf678 file: kern/driver/e100.c, line: 109 
+c01bf6a8 file: kern/driver/e100.c, line: 111 
+   RU Status: Idle
+   CU Status: Idle
+   MAC Address: 52:54:00:12:34:56
+ [ DOWN ] c7b1f4c0 1 0 idle
+ [ UP ] c7b1f4c0 0 0 idle
+ [ DOWN ] c7b1f4c0 1 0 idle
+ [ UP ] c7b1f4c0 0 0 idle
+ [ DOWN ] c7b1f4c0 1 0 idle
+ [ UP ] c7b1f4c0 0 0 idle
+ [ DOWN ] c7b1f1e0 1 0 idle
+ [ UP ] c7b1f1e0 0 0 idle
+ [ DOWN ] c7b1f220 1 1 init
+ [ UP ] c7b1f220 0 1 init
+ [ DOWN ] c01c2da0 1 1 init
+ [ DOWN ] c7b1e39c 1 1 init
+ [ DOWN ] c7b1e3b0 1 1 init
+ [ DOWN ] c01c2db8 1 1 init
+ [ DOWN ] c01be65c 1 1 init
+ [ UP ] c01be65c 0 1 init
+ [ UP ] c01c2db8 0 1 init
+ [ UP ] c7b1e3b0 0 1 init
+c7b243a0 file: kern/fs/sfs/sfs_inode.c, line: 92 
+ [ UP ] c7b1e39c 0 1 init
+ [ UP ] c01c2da0 0 1 init
+ [ DOWN ] c7b2300c 1 1 init
+ [ UP ] c7b2300c 0 1 init
+ [ DOWN ] c01c2d80 1 1 init
+ [ UP ] c01c2d80 0 1 init
+ [ DOWN ] c7b1f220 1 1 init
+ [ UP ] c7b1f220 0 1 init
+ [ DOWN ] c01bf6a8 0 3 
+kernel_execve: pid = 5, name = "sh".
+ [ DOWN ] c7b243a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b243a0 0 5 
+ [ DOWN ] c7b1e39c 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+c7b244a0 file: kern/fs/sfs/sfs_inode.c, line: 92 
+ [ UP ] c7b1e39c 0 5 
+ [ DOWN ] c7b244a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b244a0 0 5 
+ [ DOWN ] c7b1e39c 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+c7b245a0 file: kern/fs/sfs/sfs_inode.c, line: 92 
+ [ UP ] c7b1e39c 0 5 
+ [ DOWN ] c7b1e39c 1 5 
+ [ UP ] c7b1e39c 0 5 
+c7b244c4 file: kern/mm/vmm.c, line: 95 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b245a0 1 5 
+ [ DOWN ] c7b1e3b0 1 5 
+ [ DOWN ] c01c2db8 1 5 
+ [ DOWN ] c01be65c 1 5 
+ [ UP ] c01be65c 0 5 
+ [ UP ] c01c2db8 0 5 
+ [ UP ] c7b1e3b0 0 5 
+ [ UP ] c7b245a0 0 5 
+ [ DOWN ] c7b1e39c 1 5 
+ [ UP ] c7b1e39c 0 5 
+ [ UP ] c7b244c4 0 5 
+ [ UP ] c7b244c4 0 5 
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c01c2da0 1 5 sh
+ [ UP ] c01c2da0 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c01c2da0 1 5 sh
+ [ UP ] c01c2da0 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+c7b3e264 file: kern/mm/shmem.c, line: 20 
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b3e264 1 5 sh
+ [ UP ] c7b3e264 0 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b3e264 1 5 sh
+ [ UP ] c7b3e264 0 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+$ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+  [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+f [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+t [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+p [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+s [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+e [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+r [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+v [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+e [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+r [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+
+ [ DOWN ] c7b1f680 1 5 sh
+ [ UP ] c7b1f680 0 5 sh
+c7b245c4 file: kern/mm/vmm.c, line: 95 
+ [ DOWN ] c7b244c4 1 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ UP ] c7b244c4 0 5 sh
+ [ UP ] c7b245c4 0 6 
+ [ UP ] c7b245c4 0 6 
+ [ DOWN ] c7b245c4 1 6 
+ [ UP ] c7b245c4 0 6 
+ [ DOWN ] c7b243a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b243a0 0 6 
+ [ DOWN ] c7b245c4 1 6 
+ [ UP ] c7b245c4 0 6 
+ [ DOWN ] c7b245c4 1 6 
+ [ UP ] c7b245c4 0 6 
+ [ DOWN ] c01c2d80 1 6 
+ [ UP ] c01c2d80 0 6 
+ [ DOWN ] c7b243a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b243a0 0 6 
+ [ DOWN ] c7b1e39c 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+c7b24420 file: kern/fs/sfs/sfs_inode.c, line: 92 
+ [ UP ] c7b1e39c 0 6 
+ [ DOWN ] c7b24420 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b24420 0 6 
+ [ DOWN ] c7b1e39c 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+c7b246a0 file: kern/fs/sfs/sfs_inode.c, line: 92 
+ [ UP ] c7b1e39c 0 6 
+ [ DOWN ] c7b1e39c 1 6 
+ [ UP ] c7b1e39c 0 6 
+c7b245c4 file: kern/mm/vmm.c, line: 95 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b246a0 1 6 
+ [ DOWN ] c7b1e3b0 1 6 
+ [ DOWN ] c01c2db8 1 6 
+ [ DOWN ] c01be65c 1 6 
+ [ UP ] c01be65c 0 6 
+ [ UP ] c01c2db8 0 6 
+ [ UP ] c7b1e3b0 0 6 
+ [ UP ] c7b246a0 0 6 
+ [ DOWN ] c7b1e39c 1 6 
+ [ UP ] c7b1e39c 0 6 
+ [ UP ] c7b245c4 0 6 
+ [ UP ] c7b245c4 0 6 
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+c7b1f740 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f760 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f780 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f7a0 file: kern/lwip/arch/sys_arch.c, line: 55 
+ [ DOWN ] c7b1f520 128 6 <null> 6
+ [ DOWN ] c7b1f560 1 6 <null> 6
+ [ UP ] c7b1f560 0 6 <null> 6
+ [ UP ] c7b1f540 0 6 <null> 6
+ [ DOWN ] c7b1f740 0 6 <null> 6
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f740 0 2 tcpip_thread
+ [ DOWN ] c7b1f4e0 1 6 <null> 6
+ [ UP ] c7b1f4e0 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b1f520 128 6 <null> 6
+ [ DOWN ] c7b1f560 1 6 <null> 6
+ [ UP ] c7b1f560 0 6 <null> 6
+ [ UP ] c7b1f540 0 6 <null> 6
+ [ DOWN ] c7b1f740 0 6 <null> 6
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f740 0 2 tcpip_thread
+ [ DOWN ] c7b1f520 128 6 <null> 6
+ [ DOWN ] c7b1f560 1 6 <null> 6
+ [ UP ] c7b1f560 0 6 <null> 6
+ [ UP ] c7b1f540 0 6 <null> 6
+ [ DOWN ] c7b1f740 0 6 <null> 6
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+c7b1f7a0 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f780 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f760 file: kern/lwip/arch/sys_arch.c, line: 55 
+ [ UP ] c7b1f740 0 2 tcpip_thread
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b1f780 0 6 <null> 6
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ UP ] c01bf6a8 0 3 
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+c7b1f820 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f840 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f860 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f880 file: kern/lwip/arch/sys_arch.c, line: 55 
+ [ DOWN ] c7b1f760 1 3 
+ [ UP ] c7b1f760 0 3 
+ [ UP ] c7b1f780 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf6a8 1 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f760 1 6 <null> 6
+ [ UP ] c7b1f760 0 6 <null> 6
+ [ UP ] c7b1f7a0 127 6 <null> 6
+ [ DOWN ] c7b1f500 1 6 <null> 6
+ [ UP ] c7b1f500 0 6 <null> 6
+ [ DOWN ] c7b1f500 1 6 <null> 6
+ [ UP ] c7b1f500 0 6 <null> 6
+ [ DOWN ] c7b1f520 128 6 <null> 6
+ [ DOWN ] c7b1f560 1 6 <null> 6
+ [ UP ] c7b1f560 0 6 <null> 6
+ [ UP ] c7b1f540 0 6 <null> 6
+ [ DOWN ] c7b1f820 0 6 <null> 6
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c7b1f4e0 1 6 <null> 6
+ [ UP ] c7b1f4e0 0 6 <null> 6
+ [ DOWN ] c7b1f4e0 1 6 <null> 6
+ [ UP ] c7b1f4e0 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+[ II ] [ DAEMON  6 ]: client connected: 192.168.1.11
+ [ DOWN ] c7b1f700 1 6 <null> 6
+ [ UP ] c7b1f700 0 6 <null> 6
+c7b246c4 file: kern/mm/vmm.c, line: 95 
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b1f780 0 6 <null> 6
+ [ UP ] c7b246c4 0 7 
+ [ UP ] c7b246c4 0 7 
+[ II ] [ DAEMON  7 ]: new ftp session
+ [ DOWN ] c7b246c4 1 7 
+ [ UP ] c7b246c4 0 7 
+ [ DOWN ] c7b1f520 128 7 
+ [ DOWN ] c7b1f560 1 7 
+ [ UP ] c7b1f560 0 7 
+ [ UP ] c7b1f540 0 7 
+ [ DOWN ] c7b1f820 0 7 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ DOWN ] c7b1f4c0 1 2 tcpip_thread
+ [ UP ] c7b1f4c0 0 2 tcpip_thread
+ [ DOWN ] c01bf648 1 2 tcpip_thread
+ [ UP ] c01bf648 0 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c7b246c4 1 7 
+ [ UP ] c7b246c4 0 7 
+ [ DOWN ] c7b1f520 128 7 
+ [ DOWN ] c7b1f560 1 7 
+ [ UP ] c7b1f560 0 7 
+ [ UP ] c7b1f540 0 7 
+ [ DOWN ] c7b1f820 0 7 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c7b246c4 1 7 
+ [ UP ] c7b246c4 0 7 
+ [ DOWN ] c7b1f860 0 7 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+c7b1f8e0 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f900 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f920 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f940 file: kern/lwip/arch/sys_arch.c, line: 55 
+ [ DOWN ] c7b1f760 1 3 
+ [ UP ] c7b1f760 0 3 
+ [ UP ] c7b1f780 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f760 1 6 <null> 6
+ [ UP ] c7b1f760 0 6 <null> 6
+ [ UP ] c7b1f7a0 127 6 <null> 6
+ [ DOWN ] c7b1f500 1 6 <null> 6
+ [ UP ] c7b1f500 0 6 <null> 6
+ [ DOWN ] c7b1f500 1 6 <null> 6
+ [ UP ] c7b1f500 0 6 <null> 6
+ [ DOWN ] c7b1f520 128 6 <null> 6
+ [ DOWN ] c7b1f560 1 6 <null> 6
+ [ UP ] c7b1f560 0 6 <null> 6
+ [ UP ] c7b1f540 0 6 <null> 6
+ [ DOWN ] c7b1f8e0 0 6 <null> 6
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b1f4e0 1 6 <null> 6
+ [ UP ] c7b1f4e0 0 6 <null> 6
+ [ DOWN ] c7b1f4e0 1 6 <null> 6
+ [ UP ] c7b1f4e0 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+[ II ] [ DAEMON  6 ]: client connected: 192.168.1.11
+ [ DOWN ] c7b1f700 1 6 <null> 6
+ [ UP ] c7b1f700 0 6 <null> 6
+c7b24644 file: kern/mm/vmm.c, line: 95 
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b245c4 1 6 <null> 6
+ [ UP ] c7b245c4 0 6 <null> 6
+ [ DOWN ] c7b1f780 0 6 <null> 6
+ [ UP ] c7b24644 0 8 
+ [ UP ] c7b24644 0 8 
+[ II ] [ DAEMON  8 ]: new ftp session
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ DOWN ] c7b1f4c0 1 2 tcpip_thread
+ [ UP ] c7b1f4c0 0 2 tcpip_thread
+ [ DOWN ] c01bf648 1 2 tcpip_thread
+ [ UP ] c01bf648 0 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1  [ UP ] c01bf6a8 0 8 
+8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f920 0 8 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f940 1 3 
+ [ UP ] c7b1f940 0 3 
+ [ UP ] c7b1f920 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f940 1 8 
+ [ UP ] c7b1f940 0 8 
+ [ UP ] c7b1f900 127 8 
+ [ DOWN ] c7b1f500 1 8 
+ [ UP ] c7b1f500 0 8 
+ [ DOWN ] c7b1f500 1 8 
+ [ UP ] c7b1f500 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+[ II ] [ SESSION 8 ]: cmd: PWD, 13
+ [ DOWN ] c7b24644 1 8 
+ [ DOWN ] c7b243a0 1 8 
+ [ DOWN ] c7b1e3b0 1 8 
+ [ DOWN ] c01c2db8 1 8 
+ [ DOWN ] c01be65c 1 8 
+ [ UP ] c01be65c 0 8 
+ [ UP ] c01c2db8 0 8 
+ [ UP ] c7b1e3b0 0 8 
+ [ DOWN ] c7b1e3b0 1 8 
+ [ DOWN ] c01c2db8 1 8 
+ [ DOWN ] c01be65c 1 8 
+ [ UP ] c01be65c 0 8 
+ [ UP ] c01c2db8 0 8 
+ [ UP ] c7b1e3b0 0 8 
+ [ UP ] c7b243a0 0 8 
+ [ DOWN ] c7b1e39c 1 8 
+ [ UP ] c7b1e39c 0 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ DOWN ] c7b1f4c0 1 2 tcpip_thread
+ [ UP ] c7b1f4c0 0 2 tcpip_thread
+ [ DOWN ] c01bf648 1 2 tcpip_thread
+ [ UP ] c01bf648 0 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_ [ UP ] c01bf6a8 0 2 tcpip_thread
+thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f920 0 8 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f940 1 3 
+ [ UP ] c7b1f940 0 3 
+ [ UP ] c7b1f920 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f940 1 8 
+ [ UP ] c7b1f940 0 8 
+ [ UP ] c7b1f900 127 8 
+ [ DOWN ] c7b1f500 1 8 
+ [ UP ] c7b1f500 0 8 
+ [ DOWN ] c7b1f500 1 8 
+ [ UP ] c7b1f500 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+[ II ] [ SESSION 8 ]: cmd: PASV, 23
+c7b1f9c0 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f9e0 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1fa00 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1fa20 file: kern/lwip/arch/sys_arch.c, line: 55 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f9c0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f9c0 0 2 tcpip_thread
+ [ DOWN ] c7b1f4e0 1 8 
+ [ UP ] c7b1f4e0 0 8 
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f9c0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f9c0 0 2 tcpip_thread
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f9c0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+c7b1fa20 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1fa00 file: kern/lwip/arch/sys_arch.c, line: 55 
+c7b1f9e0 file: kern/lwip/arch/sys_arch.c, line: 55 
+ [ UP ] c7b1f9c0 0 2 tcpip_thread
+[ II ] [ SESSION 8 ]: PASV server created, port : 29743
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ DOWN ] c7b1f4c0 1 2 tcpip_thread
+ [ UP ] c7b1f4c0 0 2 tcpip_thread
+ [ DOWN ] c01bf648 1 2 tcpip_thread
+ [ UP ] c01bf648 0 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b1f920 0 8 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f940 1 3 
+ [ UP ] c7b1f940 0 3 
+ [ UP ] c7b1f920 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f940 1 8 
+ [ UP ] c7b1f940 0 8 
+ [ UP ] c7b1f900 127 8 
+ [ DOWN ] c7b1 [ UP ] c01bf6a8 0 8 
+f500 1 8 
+ [ UP ] c7b1f500 0 8 
+ [ DOWN ] c7b1f500 1 8 
+ [ UP ] c7b1f500 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+[ II ] [ SESSION 8 ]: cmd: LIST, 16
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1f520 128 8 
+ [ DOWN ] c7b1f560 1 8 
+ [ UP ] c7b1f560 0 8 
+ [ UP ] c7b1f540 0 8 
+ [ DOWN ] c7b1f8e0 0 8 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ DOWN ] c7b1f4c0 1 2 tcpip_thread
+ [ UP ] c7b1f4c0 0 2 tcpip_thread
+ [ DOWN ] c01bf648 1 2 tcpip_thread
+ [ UP ] c01bf648 0 2 tcpip_thread
+ [ UP ] c7b1f8e0 0 2 tcpip_thread
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b24644 1 8 
+ [ UP ] c7b24644 0 8 
+ [ DOWN ] c7b1fa00 0 8 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf6a8 1 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f880 1 3 
+ [ UP ] c7b1f880 0 3 
+ [ UP ] c7b1f860 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f880 1 3 
+ [ UP ] c7b1f880 0 3 
+ [ UP ] c7b1f860 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c01bf6a8 1 3 
+ [ DOWN ] c01bf6a8 0 3 
+ [ DOWN ] c7b1f880 1 7 
+ [ UP ] c7b1f880 0 7 
+ [ UP ] c7b1f840 126 7 
+ [ DOWN ] c7b1f500 1 7 
+ [ UP ] c7b1f500 0 7 
+ [ DOWN ] c7b1f500 1 7 
+ [ UP ] c7b1f500 0 7 
+ [ DOWN ] c7b1f520 128 7 
+ [ DOWN ] c7b1f560 1 7 
+ [ UP ] c7b1f560 0 7 
+ [ UP ] c7b1f540 0 7 
+ [ DOWN ] c7b1f820 0 7 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c7b1f520 128 7 
+ [ DOWN ] c7b1f560 1 7 
+ [ UP ] c7b1f560 0 7 
+ [ UP ] c7b1f540 0 7 
+ [ DOWN ] c7b1f820 0 7 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c7b246c4 1 7 
+ [ UP ] c7b246c4 0 7 
+ [ DOWN ] c7b1f520 128 7 
+ [ DOWN ] c7b1f560 1 7 
+ [ UP ] c7b1f560 0 7 
+ [ UP ] c7b1f540 0 7 
+ [ DOWN ] c7b1f820 0 7 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c7b246c4 1 7 
+ [ UP ] c7b246c4 0 7 
+[ II ] [ SESSION 7 ]: cmd: QUIT, 26
+ [ DOWN ] c7b246c4 1 7 
+ [ UP ] c7b246c4 0 7 
+ [ DOWN ] c7b1f520 128 7 
+ [ DOWN ] c7b1f560 1 7 
+ [ UP ] c7b1f560 0 7 
+ [ UP ] c7b1f540 0 7 
+ [ DOWN ] c7b1f820 0 7 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ DOWN ] c7b1f4c0 1 2 tcpip_thread
+ [ UP ] c7b1f4c0 0 2 tcpip_thread
+ [ DOWN ] c01bf648 1 2 tcpip_thread
+ [ UP ] c01b [ UP ] c01bf6a8 0 2 tcpip_thread
+f648 0 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c7b1f840 127 3 
+ [ DOWN ] c7b1f880 1 3 
+ [ UP ] c7b1f880 0 3 
+ [ UP ] c7b1f860 1 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf6a8 0 3 
+[ II ] [ SESSION 7 ]: exiting session ...
+ [ DOWN ] c7b1f520 128 7 
+ [ DOWN ] c7b1f560 1 7 
+ [ UP ] c7b1f560 0 7 
+ [ UP ] c7b1f540 0 7 
+ [ DOWN ] c7b1f820 0 7 
+ [ DOWN ] c7b1f560 1 2 tcpip_thread
+ [ UP ] c7b1f560 0 2 tcpip_thread
+ [ UP ] c7b1f520 127 2 tcpip_thread
+ [ UP ] c7b1f500 0 2 tcpip_thread
+ [ UP ] c7b1f500 0 2 tcpip_thread
+ [ UP ] c7b1f500 0 2 tcpip_thread
+ [ UP ] c7b1f500 0 2 tcpip_thread
+ [ UP ] c7b1f820 0 2 tcpip_thread
+ [ DOWN ] c7b1f880 1 7 
+ [ UP ] c7b1f880 0 7 
+ [ UP ] c7b1f840 126 7 
+ [ DOWN ] c7b1f880 1 7 
+ [ UP ] c7b1f880 0 7 
+ [ UP ] c7b1f840 127 7 
+ [ DOWN ] c7b1f4e0 1 7 
+ [ UP ] c7b1f4e0 0 7 
+[ II ] [ SESSION 7 ]: clent closed , status 0
+ [ UP ] c01bf6a8 0 2 tcpip_thread
+ [ DOWN ] c01bf678 1 3 
+ [ UP ] c01bf678 0 3 
+ [ DOWN ] c7b1f940 1 3 
+ [ UP ] c7b1f940 0 3 
+ [ UP ] c7b1f920 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ UP ] c7b1f500 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf648 1 3 
+ [ UP ] c01bf648 0 3 
+ [ DOWN ] c7b1f4c0 1 3 
+ [ UP ] c7b1f4c0 0 3 
+ [ DOWN ] c01bf6a8 0 3 

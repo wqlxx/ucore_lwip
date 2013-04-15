@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/1/trunk/src/kern/fs/devs
+END
+dev.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/kern/fs/devs/dev.c
+END
+dev_stdin.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/src/kern/fs/devs/dev_stdin.c
+END
+dev_stdout.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/1/trunk/src/kern/fs/devs/dev_stdout.c
+END
+dev.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/1/trunk/src/kern/fs/devs/dev.h
+END
+dev_null.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/1/trunk/src/kern/fs/devs/dev_null.c
+END
+dev_disk0.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/1/trunk/src/kern/fs/devs/dev_disk0.c
+END

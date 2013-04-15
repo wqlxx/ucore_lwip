@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 26
+/svn/!svn/ver/50/trunk/src
+END
+run
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svn/!svn/ver/44/trunk/src/run
+END
+create_ucore_vm.sh
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/50/trunk/src/create_ucore_vm.sh
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/!svn/ver/21/trunk/src/README
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/50/trunk/src/Makefile
+END
