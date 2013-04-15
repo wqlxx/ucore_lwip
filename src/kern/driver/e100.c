@@ -148,8 +148,11 @@ int ether_e100_attach(struct pci_func *pcif) {
     IP4_ADDR(&netmask, 255, 255, 255, 0);
     struct ip_addr gw;
     IP4_ADDR(&gw, 192, 168, 1, 1);
-
+#ifndef WQ_MOD
     netif_add(&dev->netif, &ipaddr, &netmask, &gw, 0, ethernetif_init, ethernet_input);
+#else
+	netif_add(&dev->netif, &ipaddr, &netmask, &gw, 0, ethernetif_init, tcpip_input);
+#endif
     netif_set_up(&dev->netif);
     struct ethernetif *eif = dev->netif.state;
     eif->receive = e100_receive;

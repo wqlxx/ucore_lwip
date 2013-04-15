@@ -71,7 +71,14 @@
 #define SYS_sendmsg         159
 #define SYS_recvmsg         160
 #define SYS_socketpair      161
-
+#ifdef WQ_OFP_MOD
+#define SYS_ofp_send_hello	162
+#define SYS_ofp_send_feature_reply		163
+#define SYS_ofp_send_feature_request	164
+#define SYS_ofp_send_set_config			165
+#define SYS_ofp_send_get_config			166
+#define SYS_ofp_send_error				167
+#endif
 /* SYS_fork flags */
 #define CLONE_VM            0x00000100  // set if VM shared between processes
 #define CLONE_THREAD        0x00000200  // thread group

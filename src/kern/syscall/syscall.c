@@ -463,6 +463,14 @@ sys_socketpair(uint32_t arg[]) {
     int *pair = (int *)arg[3];
     return socketpair_wrap(domain, type, protocol, pair);
 }
+#ifdef WQ_MOD
+static uint32_t
+sys_ofp_send_hello(uint32_t arg[]){
+	int ret;
+	ret = sys_recv(arg);
+	
+}
+#endif
 
 static uint32_t (*syscalls[])(uint32_t arg[]) = {
     [SYS_exit]              sys_exit,
@@ -528,6 +536,11 @@ static uint32_t (*syscalls[])(uint32_t arg[]) = {
     [SYS_sendmsg]           sys_sendmsg,
     [SYS_recvmsg]           sys_recvmsg,
     [SYS_socketpair]        sys_socketpair,
+#ifdef WQ_MOD
+    [SYS_ofp_send_hello]	sys_ofp_send_hello,
+    [SYS_ofp_send_feature_request]	sys_ofp_send_feature_request,
+#endif    
+    
 };
 
 #define NUM_SYSCALLS        ((sizeof(syscalls)) / (sizeof(syscalls[0])))
