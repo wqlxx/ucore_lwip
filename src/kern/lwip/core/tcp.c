@@ -1162,6 +1162,32 @@ tcp_accept(struct tcp_pcb *pcb,
 {
   pcb->accept = accept;
 }
+
+
+/*BEGIN modifid by wangq*/
+/**
+ *Used for openflow handle
+ *@param
+ */
+void
+tcp_recv_of(struct tcp_pcb *pcb,
+	err_t (* recv_of)(void *arg, struct tcp_pcb *newpcb, err_t err))
+{
+	pcb->recv_of = recv_of;
+}
+
+/**
+ *Used for openflow handle
+ *@param
+ */
+void
+tcp_send_of(struct tcp_pcb *pcb,
+	err_t (* send_of)(void *arg, struct tcp_pcb *newpcb, err_t err))
+{
+	pcb->send_of = send_of;
+}
+/*END of modify*/
+
 #endif /* LWIP_CALLBACK_API */
 
 

@@ -409,6 +409,25 @@ struct tcp_pcb {
    *            ERR_RST: the connection was reset by the remote host
    */
   void (* errf)(void *arg, err_t err);
+
+/*BEGIN moddified by wangq*/
+
+  /*Function to be called when a ofp msg comes in protocol stack
+     *here each local port means a connetction between sw and controller. 
+     *so here use recv_of callback is meanful, and finally packet after handle will be 'post' to mbox in the upper application.
+     *so does send_of, a local_port is indicate to a livily tcp connection.
+     *use to handle hello, error, echo_request, echo_reply,
+     *the others will be 'post' to 'mbox', and dealed by APP in the application layer
+     */
+  void (* recv_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *pbuf, err_t err);
+
+  /*Function to be called when a ofp msg comes in protocol stack
+     *
+     */
+  void (* send_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *pbuf, err_t err);
+
+/*END of modify*/
+  
 #endif /* LWIP_CALLBACK_API */
 
 #if LWIP_TCP_TIMESTAMPS

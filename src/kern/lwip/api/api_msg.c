@@ -331,6 +331,103 @@ err_tcp(void *arg, err_t err)
   }
 }
 
+
+/*modify by wangq*/
+/**
+ *prepare  a feature request msg to sw
+ *@param 
+ */
+static void
+_prep_feature_request(struct pbuf *p)
+{
+	struct ofp_header *fea_re;
+	fea_re->version = OFP_VERSION;
+	fea_re->type = OFPT_FEATURES_REQUEST;
+	fea_re->length = sizeof(struct ofp_header);
+	fea_re->xid = _xid_alloc();
+}
+
+/**
+ *send  a feature request msg to sw
+ *@param 
+ */
+static void
+_send_feature_request()
+{
+	struct ofp_header *header;
+	_prep_feature_request();
+}
+
+/**
+ *send  a feature request msg to sw
+ *@param 
+ */
+static void
+_send_hello()
+{
+	_prep_hello();
+}
+
+/**
+ *send  a feature request msg to sw
+ *@param 
+ */
+_send_echo_reply()
+{
+	_prep_echo_reply();
+}
+
+/**
+ *send  a feature request msg to sw
+ *@param 
+ */
+_send_echo_request()
+{
+	_prep_echo_request();
+}
+
+/**
+ *recv a ofp msg from sw
+ *@param 
+ */
+static void
+recv_of(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
+{
+	struct ofp_header *header = p;
+	switch(header->type)
+	{
+		case OFPT_HELLO:
+			_send_feature_request();
+			break;
+		case OFPT_ERROR:
+			break;
+		case OFPT_ECHO_REPLY:
+			_send_echo_request();
+		case OFPT_ECHO_REQUEST:
+			_send_echo_reply();
+		default:
+			recv_tcp(arg, pcb, p, err);//post to app
+			return;
+	}
+	return;
+		
+}
+
+/**
+ *send a ofp msg to sw
+ *@param
+ */
+static void
+send_of(struct tcp_pcb *pcb, struct pbuf *p, err_t err)
+{
+	struct ofp_header *header = p;
+	sent_tcp(conn, pcb,header->length);
+	return;
+}
+	
+/*end of modify*/
+ 
+
 /**
  * Setup a tcp_pcb with the correct callback function pointers
  * and their arguments.
@@ -348,6 +445,10 @@ setup_tcp(struct netconn *conn)
   tcp_sent(pcb, sent_tcp);
   tcp_poll(pcb, poll_tcp, 4);
   tcp_err(pcb, err_tcp);
+#ifdef WQ_MOD
+  tcp_recv_of(pcb, recv_of);
+  tcp_send_of(pcb, send_of);
+#endif
 }
 
 /**
