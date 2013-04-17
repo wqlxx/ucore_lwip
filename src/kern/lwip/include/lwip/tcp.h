@@ -289,6 +289,14 @@ enum tcp_state {
   /* the accept callback for listen- and normal pcbs, if LWIP_CALLBACK_API */ \
   DEF_ACCEPT_CALLBACK
 
+/*BEGIN moddified by wangq*/
+struct xid_list{
+	list_entry_t ptr;
+	int xid;
+};
+typedef struct xid_list xid_list_t;
+/*END of modify*/
+
 
 /* the TCP protocol control block */
 struct tcp_pcb {
@@ -425,6 +433,8 @@ struct tcp_pcb {
      *
      */
   void (* send_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *pbuf, err_t err);
+
+  xid_list_t **xid_head;
 
 /*END of modify*/
   

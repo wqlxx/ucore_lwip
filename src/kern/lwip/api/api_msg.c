@@ -334,28 +334,182 @@ err_tcp(void *arg, err_t err)
 
 /*modify by wangq*/
 /**
- *prepare  a feature request msg to sw
+ *create a transmit id
+ *@param NONE
+ */
+ int
+ _xid_alloc(void)
+{
+	return rand();
+}
+
+
+/**
+ *initial the xid table 
+ *@param 
+ */
+ static void
+ _init_pcb_xid_list_head(xid_list_t **link)
+{
+	*link = malloc(sizeof(list_entry_t));
+	(*link)->ptr.prev = NULL;
+	(*link)->ptr.next = NULL;
+	(*link)->xid = -1;
+}
+
+/**
+ *insert a new xid into table 
+ *@param 
+ */
+ xid_list_t*
+_init_pcb_xid_entry(int xid)
+{
+	xid_list_t *new;
+	new = malloc(sizeof(xid_list_t));
+	new->xid = xid;
+	return new;
+}
+
+/**
+ *insert a new xid into table 
  *@param 
  */
 static void
-_prep_feature_request(struct pbuf *p)
+_insert_pcb_xid_list(xid_list_t **link, int xid)
 {
-	struct ofp_header *fea_re;
+	xid_list_t *new;
+	
+	new = _init_pcb_xid_entry(xid);
+	list_add(*link, new);
+}
+
+
+/**
+ *lookup a xid from table when recv a reply with a create xid 
+ *if got it ,then delete the entry
+ *@param 
+ */
+static void
+_lookup_pcb_xid_list(xid_list_t **link, int xid)
+{
+	xid_list_t *head = *link;
+	xid_list_t *find_ptr = ((list_entry_t*)head)->next;
+	list_entry_t *elem;
+	elem = (list_entry_t*)find_ptr;
+	
+	/*look up a xid_entry equal to xid*/
+	for(; find_ptr != NULL; elem = elem->next, find_ptr = elem)
+	{
+		if( find_ptr->xid == xid )
+		{			
+			list_del(find_ptr->ptr);
+			free(elem);
+		}
+	}
+	return;
+}
+
+
+/**
+ *prepare  a feature request msg to sw
+ *@param 
+ */
+int
+_prep_feature_request(void **h)
+{
+	struct ofp_header *fea_re = malloc(SIZE_OF_FEATURE_REQUEST);
 	fea_re->version = OFP_VERSION;
 	fea_re->type = OFPT_FEATURES_REQUEST;
 	fea_re->length = sizeof(struct ofp_header);
 	fea_re->xid = _xid_alloc();
+
+	*h = fea_re;
+
+	return fea_re->xid;
 }
+
 
 /**
  *send  a feature request msg to sw
  *@param 
  */
 static void
-_send_feature_request()
+_send_feature_request(struct tcp_pcb *pcb)
 {
 	struct ofp_header *header;
-	_prep_feature_request();
+	int xid;
+	int ret;
+	
+	xid = _prep_feature_request(&header);
+
+	_init_pcb_xid_list_head(pcb->xid_head);
+	ret = tcp_write(pcb, header, 8, TCP_WRITE_FLAG_COPY);//apiflags is defined in tcp.h
+	if( ret == ERR_OK ){
+		_insert_pcb_xid_list(pcb->xid_head, xid);
+	}else{
+		free(*(pcb->xid_head));
+		(*(pcb->xid_head)) = NULL;
+	}
+	
+	return;
+}
+
+
+/**
+ *prepare a hello msg
+ *@param 
+ */
+int
+_prep_hello(void **h)
+{
+	struct ofp_header *header = malloc(sizeof(struct ofp_header));
+	header->version = OFP_VERSION;
+	header->type = OFPT_HELLO;
+	header->length = 8;
+	header->xid = _xid_alloc();
+
+	*h = header;
+
+	return header->xid;
+}
+
+
+/**
+ *send  a feature request msg to sw
+ *@param 
+ */
+static void
+_send_hello(struct tcp_pcb *pcb)
+{
+	int xid;
+	int ret;
+	
+	struct ofp_header *header;
+	xid = _prep_hello(header);
+	ret = tcp_write(pcb, header, header->length, TCP_WRITE_FLAG_COPY);
+	if( ret == ERR_OK)
+	{
+		_insert_pcb_xid_list(pcb, xid);
+	}
+}
+
+
+/**
+ *prepare  a echo replyt msg to sw
+ *@param 
+ */
+int
+_prep_echo_reply(void **h)
+{
+	struct ofp_header *header = malloc(sizeof(struct ofp_header));
+	header->version = OFP_VERSION;
+	header->type = OFPT_ECHO_REPLY;
+	header->length = 8;
+	header->xid = _xid_alloc();
+
+	*h = header;
+
+	return header->xid;
 }
 
 /**
@@ -363,19 +517,40 @@ _send_feature_request()
  *@param 
  */
 static void
-_send_hello()
+_send_echo_reply(struct tcp_pcb *pcb)
 {
-	_prep_hello();
+	int ret;
+	int xid;
+	struct ofp_header *header;
+	xid = _prep_echo_reply(header);
+	ret = tcp_write(pcb, header, header->length, TCP_WRITE_FLAG_COPY);
+	if( ret == ERR_OK)
+	{
+		_insert_pcb_xid_list(pcb, xid);
+	}
+	return;
+
 }
 
+
 /**
- *send  a feature request msg to sw
+ *prepare  a echo request msg to sw
  *@param 
  */
-_send_echo_reply()
+int
+_prep_echo_request(void **h)
 {
-	_prep_echo_reply();
+	struct ofp_header *header = malloc(sizeof(struct ofp_header));
+	header->version = OFP_VERSION;
+	header->type = OFPT_ECHO_REQUEST;
+	header->length = 8;
+	header->xid = _xid_alloc();
+
+	*h = header;
+
+	return header->xid;
 }
+
 
 /**
  *send  a feature request msg to sw
@@ -383,7 +558,16 @@ _send_echo_reply()
  */
 _send_echo_request()
 {
-	_prep_echo_request();
+	int ret;
+	int xid;
+	struct ofp_header *header;
+	xid = _prep_echo_reply(header);
+	ret = tcp_write(pcb, header, header->length, TCP_WRITE_FLAG_COPY);
+	if( ret == ERR_OK)
+	{
+		_insert_pcb_xid_list(pcb, xid);
+	}
+	return;;
 }
 
 /**
