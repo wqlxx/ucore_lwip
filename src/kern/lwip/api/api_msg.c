@@ -220,7 +220,20 @@ recv_tcp(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
   } else {
     len = 0;
   }
+#if 0
+ /*modify by wangq*/
 
+	struct ofp_header *header;
+ 	int ret_of;
+ 	header = p->payload;
+	if(header->version == OFP_VERSION || header->version == OFP_VERSION_1_1)
+	{
+		ret_of = recv_of(arg, pcb, p, err);
+		if( ret_of == ERR_OK )
+			return ERR_OK;
+	}
+/*end of modify*/
+#endif
   if (sys_mbox_trypost(conn->recvmbox, p) != ERR_OK) {
     return ERR_MEM;
   } else {
@@ -331,7 +344,7 @@ err_tcp(void *arg, err_t err)
   }
 }
 
-
+#define ________WANGQ_MOD_________
 /*modify by wangq*/
 /**
  *create a transmit id
@@ -341,6 +354,21 @@ err_tcp(void *arg, err_t err)
  _xid_alloc(void)
 {
 	return rand();
+}
+
+/**
+ *create a pbuf
+ *@param NONE
+ */
+struct pbuf*
+_of_create_pbuf(void *data)
+{
+	struct pbuf *p;
+	struct ofp_header *h;
+	p = pbuf_alloc(PBUF_TRANSPORT, h->length, PBUF_RAM);
+	p->payload = data;
+
+	return p;
 }
 
 
@@ -389,7 +417,7 @@ _insert_pcb_xid_list(xid_list_t **link, int xid)
  *if got it ,then delete the entry
  *@param 
  */
-static void
+static err_t
 _lookup_pcb_xid_list(xid_list_t **link, int xid)
 {
 	xid_list_t *head = *link;
@@ -406,7 +434,10 @@ _lookup_pcb_xid_list(xid_list_t **link, int xid)
 			free(elem);
 		}
 	}
-	return;
+
+	if(find_ptr == NULL)
+		return ERR_VAL;
+	return ERR_OK;
 }
 
 
@@ -437,13 +468,14 @@ static void
 _send_feature_request(struct tcp_pcb *pcb)
 {
 	struct ofp_header *header;
+	struct pbuf *p;
 	int xid;
 	int ret;
 	
 	xid = _prep_feature_request(&header);
-
+	p = _of_create_pbuf((void*)header);
 	_init_pcb_xid_list_head(pcb->xid_head);
-	ret = tcp_write(pcb, header, 8, TCP_WRITE_FLAG_COPY);//apiflags is defined in tcp.h
+	ret = tcp_write(pcb, p, p->len, TCP_WRITE_FLAG_COPY);//apiflags is defined in tcp.h
 	if( ret == ERR_OK ){
 		_insert_pcb_xid_list(pcb->xid_head, xid);
 	}else{
@@ -483,14 +515,17 @@ _send_hello(struct tcp_pcb *pcb)
 {
 	int xid;
 	int ret;
+	struct pbuf* p;
 	
 	struct ofp_header *header;
 	xid = _prep_hello(header);
-	ret = tcp_write(pcb, header, header->length, TCP_WRITE_FLAG_COPY);
+	p = _of_create_pbuf((void*)header);
+	ret = tcp_write(pcb, p, p->tot_len, TCP_WRITE_FLAG_COPY);
 	if( ret == ERR_OK)
 	{
 		_insert_pcb_xid_list(pcb, xid);
 	}
+	return;
 }
 
 
@@ -498,18 +533,18 @@ _send_hello(struct tcp_pcb *pcb)
  *prepare  a echo replyt msg to sw
  *@param 
  */
-int
-_prep_echo_reply(void **h)
+err_t
+_prep_echo_reply(void **h, int xid)
 {
 	struct ofp_header *header = malloc(sizeof(struct ofp_header));
 	header->version = OFP_VERSION;
 	header->type = OFPT_ECHO_REPLY;
 	header->length = 8;
-	header->xid = _xid_alloc();
+	header->xid = xid 
 
 	*h = header;
 
-	return header->xid;
+	return ERR_OK;
 }
 
 /**
@@ -517,13 +552,15 @@ _prep_echo_reply(void **h)
  *@param 
  */
 static void
-_send_echo_reply(struct tcp_pcb *pcb)
+_send_echo_reply(void *arg, struct tcp_pcb *pcb, int xid)
 {
-	int ret;
-	int xid;
 	struct ofp_header *header;
-	xid = _prep_echo_reply(header);
-	ret = tcp_write(pcb, header, header->length, TCP_WRITE_FLAG_COPY);
+	struct pbuf *p;
+	int ret;
+	
+	_prep_echo_reply(header, xid);
+	p = _of_create_pbuf((void*)header);
+	ret = sent_tcp(arg, pcb, header->length);
 	if( ret == ERR_OK)
 	{
 		_insert_pcb_xid_list(pcb, xid);
@@ -561,8 +598,11 @@ _send_echo_request()
 	int ret;
 	int xid;
 	struct ofp_header *header;
+	struct pbuf *p;
+	
 	xid = _prep_echo_reply(header);
-	ret = tcp_write(pcb, header, header->length, TCP_WRITE_FLAG_COPY);
+	p = _of_create_pbuf((void *)header);
+	ret = tcp_write(pcb, p, p->len, TCP_WRITE_FLAG_COPY);
 	if( ret == ERR_OK)
 	{
 		_insert_pcb_xid_list(pcb, xid);
@@ -574,27 +614,33 @@ _send_echo_request()
  *recv a ofp msg from sw
  *@param 
  */
-static void
+static err_t
 recv_of(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
 {
-	struct ofp_header *header = p;
+	struct ofp_header *header = (struct ofp_header*)p;
+	err_t ret;
+	
 	switch(header->type)
 	{
 		case OFPT_HELLO:
-			_send_feature_request();
-			break;
+			_send_feature_request(pcb);
+			return ERR_ARG;
 		case OFPT_ERROR:
-			break;
-		case OFPT_ECHO_REPLY:
-			_send_echo_request();
+			return ERR_ARG;
 		case OFPT_ECHO_REQUEST:
-			_send_echo_reply();
+			_send_echo_reply(pcb);
+			return ERR_ARG;
+		case OFPT_ECHO_REPLY:
+			ret = _lookup_pcb_xid_list(pcb->xid_head, header->xid);
+			if(ret == ERR_OK)
+				_send_echo_request(pcb);
+			return ERR_ARG;
 		default:
-			recv_tcp(arg, pcb, p, err);//post to app
-			return;
+			break;
 	}
-	return;
-		
+	pbuf_free(p);
+	
+	return ERR_OK;	
 }
 
 /**
@@ -602,15 +648,22 @@ recv_of(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
  *@param
  */
 static void
-send_of(struct tcp_pcb *pcb, struct pbuf *p, err_t err)
+send_of(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
 {
 	struct ofp_header *header = p;
-	sent_tcp(conn, pcb,header->length);
+	
+	//sent_tcp(conn, pcb,header->length);
+	//20130418, maybe we can add the of msg to pcb->unsent queue
+	err = tcp_write(pcb, p, p->tot_len, TCP_WRITE_FLAG_COPY);
+	if( err == ERR_OK )
+	{
+		return;
+	}
 	return;
 }
 	
 /*end of modify*/
- 
+#define ________END_MOD_________ 
 
 /**
  * Setup a tcp_pcb with the correct callback function pointers
@@ -629,10 +682,10 @@ setup_tcp(struct netconn *conn)
   tcp_sent(pcb, sent_tcp);
   tcp_poll(pcb, poll_tcp, 4);
   tcp_err(pcb, err_tcp);
-#ifdef WQ_MOD
+  /*modified by wangq*/
   tcp_recv_of(pcb, recv_of);
   tcp_send_of(pcb, send_of);
-#endif
+  /*end of mod*/
 }
 
 /**
@@ -1264,8 +1317,8 @@ do_writemore(struct netconn *conn)
 
   LWIP_ASSERT("conn->state == NETCONN_WRITE", (conn->state == NETCONN_WRITE));
 
-  dataptr = (u8_t*)conn->write_msg->msg.w.dataptr + conn->write_offset;
-  diff = conn->write_msg->msg.w.len - conn->write_offset;
+  dataptr = (u8_t*)conn->write_msg->msg.w.dataptr + conn->write_offset;//write_offset is 0
+  diff = conn->write_msg->msg.w.len - conn->write_offset;//write_offset is 0
   if (diff > 0xffffUL) { /* max_u16_t */
     len = 0xffff;
 #if LWIP_TCPIP_CORE_LOCKING

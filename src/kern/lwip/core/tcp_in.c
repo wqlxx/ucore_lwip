@@ -319,7 +319,18 @@ tcp_input(struct pbuf *p, struct netif *inp)
           if(flags & TCP_PSH) {
             recv_data->flags |= PBUF_FLAG_PUSH;
           }
-
+#if 0
+/*modify by wangq*/
+		struct ofp_header *header;
+		header = recv_data->payload;
+		if(header->version == OFP_VERSION || header->version == OFP_VERSION_1_1)
+		{
+			TCP_EVENT_RECV_OF(pcb, recv_data, ERR_OK, err);
+			if(err == ERR_ARG)
+				return ERR_OK;
+		}
+/*end of modify*/
+#endif
           /* Notify application that data has been received. */
           TCP_EVENT_RECV(pcb, recv_data, ERR_OK, err);
 

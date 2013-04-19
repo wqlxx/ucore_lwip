@@ -1163,7 +1163,7 @@ tcp_accept(struct tcp_pcb *pcb,
   pcb->accept = accept;
 }
 
-
+#define _________BDGIN_MOD_________
 /*BEGIN modifid by wangq*/
 /**
  *Used for openflow handle
@@ -1187,7 +1187,7 @@ tcp_send_of(struct tcp_pcb *pcb,
 	pcb->send_of = send_of;
 }
 /*END of modify*/
-
+#define _______END_MOD________
 #endif /* LWIP_CALLBACK_API */
 
 
