@@ -364,7 +364,8 @@ struct pbuf*
 _of_create_pbuf(void *data)
 {
 	struct pbuf *p;
-	struct ofp_header *h;
+	struct ofp_header *h = (struct ofp_header*)data;
+	
 	p = pbuf_alloc(PBUF_TRANSPORT, h->length, PBUF_RAM);
 	p->payload = data;
 
@@ -427,7 +428,7 @@ _lookup_pcb_xid_list(xid_list_t **link, int xid)
 	elem = (list_entry_t*)find_ptr;
 	
 	/*look up a xid_entry equal to xid*/
-	for(; find_ptr != NULL; elem = elem->next, find_ptr = elem)
+	for(; find_ptr != NULL; elem = elem->next, find_ptr = (xid_list_t*)elem)
 	{
 		if( find_ptr->xid == xid )
 		{			
@@ -603,7 +604,7 @@ _send_echo_request(struct tcp_pcb *pcb)
 	struct ofp_header *header;
 	struct pbuf *p;
 	
-	_prep_echo_request(header);
+	xid = _prep_echo_request((void**)&header);
 	p = _of_create_pbuf((void *)header);
 	ret = tcp_write(pcb, p, p->len, TCP_WRITE_FLAG_COPY);
 	if( ret == ERR_OK)
@@ -650,19 +651,19 @@ recv_of(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
  *send a ofp msg to sw
  *@param
  */
-static void
+static err_t
 send_of(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
 {
-	struct ofp_header *header = p;
+	//struct ofp_header *header = (struct ofp_header*)(p->payload);
 	
 	//sent_tcp(conn, pcb,header->length);
 	//20130418, maybe we can add the of msg to pcb->unsent queue
 	err = tcp_write(pcb, p, p->tot_len, TCP_WRITE_FLAG_COPY);
 	if( err == ERR_OK )
 	{
-		return;
+		return ERR_OK;
 	}
-	return;
+	return ERR_OK;
 }
 	
 /*end of modify*/
