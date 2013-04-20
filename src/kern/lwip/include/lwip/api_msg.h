@@ -43,7 +43,10 @@
 #include "lwip/sys.h"
 #include "lwip/igmp.h"
 #include "lwip/api.h"
-
+#define _____________MOD_BEGIN___________
+#include <stdlib.h>
+#include "lwip/openflow.h"
+#define ___________END_MOD____________
 #ifdef __cplusplus
 extern "C" {
 #endif

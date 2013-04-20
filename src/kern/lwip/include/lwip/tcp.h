@@ -42,7 +42,9 @@
 #include "lwip/ip.h"
 #include "lwip/icmp.h"
 #include "lwip/err.h"
-
+#define ___________BEGIN_MOD________
+#include "lwip/openflow.h"
+#define ___________END_MOD_________
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -75,6 +77,11 @@ void             tcp_poll    (struct tcp_pcb *pcb,
                               u8_t interval);
 void             tcp_err     (struct tcp_pcb *pcb,
                               void (* err)(void *arg, err_t err));
+void			tcp_recv_of (struct tcp_pcb *pcb,
+								err_t (* recv_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err));
+
+void			tcp_send_of (struct tcp_pcb *pcb,
+								err_t (* recv_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err));
 
 #define          tcp_mss(pcb)      ((pcb)->mss)
 #define          tcp_sndbuf(pcb)   ((pcb)->snd_buf)
@@ -419,7 +426,7 @@ struct tcp_pcb {
   void (* errf)(void *arg, err_t err);
 
 /*BEGIN moddified by wangq*/
-#if 1
+
   /*Function to be called when a ofp msg comes in protocol stack
      *here each local port means a connetction between sw and controller. 
      *so here use recv_of callback is meanful, and finally packet after handle will be 'post' to mbox in the upper application.
@@ -427,13 +434,13 @@ struct tcp_pcb {
      *use to handle hello, error, echo_request, echo_reply,
      *the others will be 'post' to 'mbox', and dealed by APP in the application layer
      */
-  	void (* recv_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *pbuf, err_t err);
+  	err_t (* recv_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *pbuf, err_t err);
 
   /*Function to be called when a ofp msg comes in protocol stack
      *
      */
-	void (* send_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *pbuf, err_t err);
-#endif
+	err_t (* send_of)(void *arg, struct tcp_pcb *pcb, struct pbuf *pbuf, err_t err);
+
   xid_list_t **xid_head;
 
 /*END of modify*/
@@ -521,15 +528,17 @@ err_t lwip_tcp_event(void *arg, struct tcp_pcb *pcb,
 #define TCP_EVENT_RECV(pcb,p,err,ret)                           					\
   do {                                                          					\
     if((pcb)->recv != NULL) {                                  	 					\
-	  struct ofp_header *header = (struct pbuf*)p->payload;							\
+	  struct ofp_header *header = ((struct pbuf*)(p))->payload;						\
 	  if(header->version == OFP_VERSION || header->version == OFP_VERSION_1_1)		\
+      {																				\
       		(ret) = (pcb)->recv_of((pcb)->callback_arg,(pcb),(p),(err)); 			\
       		if( (ret) == ERR_OK )													\
 				(ret) = (pcb)->recv((pcb)->callback_arg,(pcb),(p),(err));			\
-			else
-				break;
-      else																			\
-	  		(ret) = (pcb)->recv((pcb)->callback_arg,(pcb),(p),(err)); 				\
+			else																	\
+				break;																\
+	 }else{																			\
+	  		(ret) = (pcb)->recv((pcb)->callback_arg,(pcb),(p),(err));				\
+	 }																				\
     } else {                                                    					\
       (ret) = tcp_recv_null(NULL, (pcb), (p), (err));          	 					\
     }                                                           					\

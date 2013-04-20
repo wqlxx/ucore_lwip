@@ -350,7 +350,7 @@ err_tcp(void *arg, err_t err)
  *create a transmit id
  *@param NONE
  */
- int
+ static int
  _xid_alloc(void)
 {
 	return rand();
@@ -379,7 +379,7 @@ _of_create_pbuf(void *data)
  static void
  _init_pcb_xid_list_head(xid_list_t **link)
 {
-	*link = malloc(sizeof(list_entry_t));
+	*link = mem_malloc(sizeof(list_entry_t));
 	(*link)->ptr.prev = NULL;
 	(*link)->ptr.next = NULL;
 	(*link)->xid = -1;
@@ -393,7 +393,7 @@ _of_create_pbuf(void *data)
 _init_pcb_xid_entry(int xid)
 {
 	xid_list_t *new;
-	new = malloc(sizeof(xid_list_t));
+	new = mem_malloc(sizeof(xid_list_t));
 	new->xid = xid;
 	return new;
 }
@@ -403,12 +403,13 @@ _init_pcb_xid_entry(int xid)
  *@param 
  */
 static void
-_insert_pcb_xid_list(xid_list_t **link, int xid)
+_insert_pcb_xid_list(xid_list_t** link, int xid)
 {
-	xid_list_t *new;
+	xid_list_t *new_ptr;
+	list_entry_t *list = (list_entry_t*)(*link);
 	
-	new = _init_pcb_xid_entry(xid);
-	list_add(*link, new);
+	new_ptr = _init_pcb_xid_entry(xid);
+	list_add(list, &(new_ptr->ptr));
 }
 
 
@@ -421,7 +422,7 @@ static err_t
 _lookup_pcb_xid_list(xid_list_t **link, int xid)
 {
 	xid_list_t *head = *link;
-	xid_list_t *find_ptr = ((list_entry_t*)head)->next;
+	xid_list_t *find_ptr =(xid_list_t*)(((list_entry_t*)head)->next);
 	list_entry_t *elem;
 	elem = (list_entry_t*)find_ptr;
 	
@@ -430,8 +431,8 @@ _lookup_pcb_xid_list(xid_list_t **link, int xid)
 	{
 		if( find_ptr->xid == xid )
 		{			
-			list_del(find_ptr->ptr);
-			free(elem);
+			list_del(&(find_ptr->ptr));
+			mem_free(elem);
 		}
 	}
 
@@ -448,7 +449,7 @@ _lookup_pcb_xid_list(xid_list_t **link, int xid)
 int
 _prep_feature_request(void **h)
 {
-	struct ofp_header *fea_re = malloc(SIZE_OF_FEATURE_REQUEST);
+	struct ofp_header *fea_re = mem_malloc(8);
 	fea_re->version = OFP_VERSION;
 	fea_re->type = OFPT_FEATURES_REQUEST;
 	fea_re->length = sizeof(struct ofp_header);
@@ -472,14 +473,14 @@ _send_feature_request(struct tcp_pcb *pcb)
 	int xid;
 	int ret;
 	
-	xid = _prep_feature_request(&header);
+	xid = _prep_feature_request((void*)&header);
 	p = _of_create_pbuf((void*)header);
 	_init_pcb_xid_list_head(pcb->xid_head);
 	ret = tcp_write(pcb, p, p->len, TCP_WRITE_FLAG_COPY);//apiflags is defined in tcp.h
 	if( ret == ERR_OK ){
 		_insert_pcb_xid_list(pcb->xid_head, xid);
 	}else{
-		free(*(pcb->xid_head));
+		mem_free(*(pcb->xid_head));
 		(*(pcb->xid_head)) = NULL;
 	}
 	
@@ -494,7 +495,7 @@ _send_feature_request(struct tcp_pcb *pcb)
 int
 _prep_hello(void **h)
 {
-	struct ofp_header *header = malloc(sizeof(struct ofp_header));
+	struct ofp_header *header = mem_malloc(sizeof(struct ofp_header));
 	header->version = OFP_VERSION;
 	header->type = OFPT_HELLO;
 	header->length = 8;
@@ -518,12 +519,12 @@ _send_hello(struct tcp_pcb *pcb)
 	struct pbuf* p;
 	
 	struct ofp_header *header;
-	xid = _prep_hello(header);
+	xid = _prep_hello((void*)&header);
 	p = _of_create_pbuf((void*)header);
 	ret = tcp_write(pcb, p, p->tot_len, TCP_WRITE_FLAG_COPY);
 	if( ret == ERR_OK)
 	{
-		_insert_pcb_xid_list(pcb, xid);
+		_insert_pcb_xid_list(pcb->xid_head, xid);
 	}
 	return;
 }
@@ -533,18 +534,17 @@ _send_hello(struct tcp_pcb *pcb)
  *prepare  a echo replyt msg to sw
  *@param 
  */
-err_t
-_prep_echo_reply(void **h, int xid)
+void*
+_prep_echo_reply(int xid)
 {
-	struct ofp_header *header = malloc(sizeof(struct ofp_header));
+	struct ofp_header *header = mem_malloc(sizeof(struct ofp_header));
 	header->version = OFP_VERSION;
 	header->type = OFPT_ECHO_REPLY;
 	header->length = 8;
-	header->xid = xid 
+	header->xid = xid; 
 
-	*h = header;
+	return (void*)header;
 
-	return ERR_OK;
 }
 
 /**
@@ -552,18 +552,20 @@ _prep_echo_reply(void **h, int xid)
  *@param 
  */
 static void
-_send_echo_reply(void *arg, struct tcp_pcb *pcb, int xid)
+_send_echo_reply(struct tcp_pcb *pcb, int xid)
 {
 	struct ofp_header *header;
 	struct pbuf *p;
 	int ret;
+	void* data;
 	
-	_prep_echo_reply(header, xid);
+	data = _prep_echo_reply(xid);
+	header = (struct ofp_header*)data;
 	p = _of_create_pbuf((void*)header);
-	ret = sent_tcp(arg, pcb, header->length);
+	ret = tcp_write(pcb, p, p->len, TCP_WRITE_FLAG_COPY);
 	if( ret == ERR_OK)
 	{
-		_insert_pcb_xid_list(pcb, xid);
+		_insert_pcb_xid_list(pcb->xid_head, xid);
 	}
 	return;
 
@@ -577,7 +579,7 @@ _send_echo_reply(void *arg, struct tcp_pcb *pcb, int xid)
 int
 _prep_echo_request(void **h)
 {
-	struct ofp_header *header = malloc(sizeof(struct ofp_header));
+	struct ofp_header *header = mem_malloc(sizeof(struct ofp_header));
 	header->version = OFP_VERSION;
 	header->type = OFPT_ECHO_REQUEST;
 	header->length = 8;
@@ -593,19 +595,20 @@ _prep_echo_request(void **h)
  *send  a feature request msg to sw
  *@param 
  */
-_send_echo_request()
+ static void
+_send_echo_request(struct tcp_pcb *pcb)
 {
 	int ret;
 	int xid;
 	struct ofp_header *header;
 	struct pbuf *p;
 	
-	xid = _prep_echo_reply(header);
+	_prep_echo_request(header);
 	p = _of_create_pbuf((void *)header);
 	ret = tcp_write(pcb, p, p->len, TCP_WRITE_FLAG_COPY);
 	if( ret == ERR_OK)
 	{
-		_insert_pcb_xid_list(pcb, xid);
+		_insert_pcb_xid_list(pcb->xid_head, xid);
 	}
 	return;;
 }
@@ -628,7 +631,7 @@ recv_of(void *arg, struct tcp_pcb *pcb, struct pbuf *p, err_t err)
 		case OFPT_ERROR:
 			return ERR_ARG;
 		case OFPT_ECHO_REQUEST:
-			_send_echo_reply(pcb);
+			_send_echo_reply(pcb, header->xid);
 			return ERR_ARG;
 		case OFPT_ECHO_REPLY:
 			ret = _lookup_pcb_xid_list(pcb->xid_head, header->xid);
