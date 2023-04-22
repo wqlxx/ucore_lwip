@@ -13,11 +13,20 @@ enum {
 
 struct pci_bus;
 
+// bus：一个指向pci_bus结构的指针，表示桥接器的主总线。
+// dev：一个无符号整数，表示设备的PCI地址中的设备号。
+// func：一个无符号整数，表示设备的PCI地址中的功能号。
+// dev_id：一个无符号整数，表示设备的ID。
+// dev_class：一个无符号整数，表示设备的类别。
+// reg_base：一个无符号整数数组，表示设备的6个寄存器的基地址。
+// reg_size：一个无符号整数数组，表示设备的6个寄存器的大小。
+// reg_type：一个无符号整数数组，表示设备的6个寄存器的类型。
+// irq_line：一个无符号字节，表示设备的中断线号。
 struct pci_func {
     struct pci_bus *bus;	// Primary bus for bridges
 
-    uint32_t dev;
-    uint32_t func;
+    uint32_t dev;  // 设备id
+    uint32_t func;  // 
 
     uint32_t dev_id;
     uint32_t dev_class;
